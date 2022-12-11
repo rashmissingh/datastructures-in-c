@@ -1,0 +1,55 @@
+some garbage you don't care about
+UserId=123456 Some Text not related to what you're trying to do
+some other log message
+
+Ops | userid | log message | status 
+
+
+grep "UserId" | cut -d ' ' -c 1 | cut -d '=' -c 2 | sort -n | uniq -c | he
+
+/*
+input:
+ids = 
+123
+123
+456
+678
+678
+N = 5
+*/
+
+// prints unique lines
+// lines is sorted already
+// N is the number of lines
+void uniq( int *ids, int N) {
+    
+    int i = 0, j, unique = 0;
+    
+    while (i < N) {
+        printf("%d", ids[i]);
+        for (j=i+1; j<N && !unique; j++) {
+            if (ids[i] != ids[j])
+                unique = 1;
+                
+        }
+        i = j;
+        unique = 0;
+        /*printf("%d", ids[j]);*/
+    }
+    
+}
+
+i=0, j = 1     123,
+j = 2  unique = 1
+
+i=2,           456,
+i=2, j=3, unique = 1 
+
+i=3, unique = 0
+i=3, unique = 0, 678
+
+for i=3, j=4 -> j=5
+
+i
+
+
